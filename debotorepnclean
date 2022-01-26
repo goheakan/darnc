@@ -1,4 +1,8 @@
 #!/bin/bash
+LOG_FILE=debotorepnclean_out.log
+ERR_FILE=debotorepnclean_err.log
+exec 1> $LOG_FILE
+exec 2> $ERR_FILE
 bold=$(tput bold)
 normal=$(tput sgr0)
 echo "${bold}*********************************************************************"
