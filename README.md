@@ -14,7 +14,7 @@ Script bash : Repairs some errors &amp; clean-up a Debian Linux distribution
 - Clean up the independencies (dependencies unused by any packages)
 
 ## How to use it ?
-You need to install git on yout debian machine
+You need to install git on your debian machine
 ```
 sudo apt install git
 ```
