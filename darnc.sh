@@ -25,7 +25,7 @@ main(){
   echo "${bold}| Clear out the package files :${normal}"
   apt autoclean -y 2>/dev/null && apt autoremove -y 2>/dev/null
   echo_bold
-  echo "${bold}| MFull-upgrade all the packages :${normal}"
+  echo "${bold}| Full-upgrade the packages :${normal}"
   apt full-upgrade -y 2>/dev/null
   echo_bold
   echo "${bold}| Clean up the local trash :${normal}"
@@ -53,8 +53,8 @@ YELLOW="\033[1;33m"
 RED="\033[0;31m"
 ENDCOLOR="\033[0m"
 if [ "$USER" != root ]; then
-  echo -e $RED"L'utilisateur doit être en root pour pouvoir continuer !"
-  echo -e $YELLOW"Le programme s'arrête..."$ENDCOLOR
+  echo -e $RED"[DARNC] : Need to run as root !"
+  echo -e $YELLOW"[DARNC] : Exiting..."$ENDCOLOR
   echo -e
   exit 0
 else
