@@ -1,6 +1,7 @@
 # Debian Automation Repair & Clean
 
-Script bash : Repairs some errors &amp; clean-up a Debian Linux distribution
+Script bash : Repairs some errors &amp; clean-up a Debian Linux distribution.
+The purpose of this project it's to put together all interesting commands to maintain stable a Debian Linux distribution.
 
 ## What does it do ?
 
