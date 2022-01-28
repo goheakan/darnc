@@ -9,7 +9,7 @@ Script bash : Repairs some errors &amp; clean-up a Debian Linux distribution
 - Make a full-upgrade to the packages
 - Clean up the local trash of the user and the root
 - Clean up the residues of uninstalled packages
-- Clean up the old kernel unused
+- Remove the old kernel unused
 - Clean up the inoperative snaps
 - Clean up the independencies (dependencies unused by any packages)
 
