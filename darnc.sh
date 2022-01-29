@@ -16,7 +16,8 @@ echo_bold(){
 
 main(){
   echo "${bold}*********************************************************************"
-  echo "${bold}**           Welcome to the Goheakan's service                     **"
+  echo "${bold}**            Welcome to the DARNC's service                       **"
+  echo "${bold}**                      by Goheakan                                **"
   echo "${bold}*********************************************************************"
   echo_bold
   echo "${bold}| Update, the package lists, fix missing and broken packages :${normal}"
@@ -45,7 +46,7 @@ main(){
   echo "${bold}| Clean up the independencies :${normal}"
   apt purge "$(dpkg -l | awk '/^rc/{print $2}')" -y 2>/dev/null
   echo_bold
-  echo "${bold}| The Goheakan service is done !${normal}"
+  echo "${bold}| The DARNC's service is done !${normal}"
 }
 
 
