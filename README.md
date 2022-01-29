@@ -49,7 +49,7 @@ cd ~/Documents/darnc/
 git clone https://github.com/goheakan/darnc.git
 cd darnc/
 chmod +x darnc.sh
-mv darnc.sh /usr/bin/darnc
+sudo mv darnc.sh /usr/bin/darnc
 cd ..
 rm -rf darnc/
 ```
