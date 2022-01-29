@@ -59,7 +59,7 @@ sudo su
 darnc
 ```
 
-## You have some trouble ?
+## You have some troubles ?
 
 ### Before you can use it :
   Let me know in the ***Issues*** section, maybe I can help you.
