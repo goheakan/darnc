@@ -1,4 +1,4 @@
-# Debian Automation Repair & Clean
+# Debian Automation Repair & Clean : ***DARNC***
 <p align="top">
   <img align="right" width="20%" alt="PNG" src="https://upload.wikimedia.org/wikipedia/commons/9/94/Debian_record_2013.PNG"/>
 </p>
@@ -17,7 +17,7 @@
 
 ## <img align="left" width="5%" alt="PNG" src="https://media.giphy.com/media/QAPQujznKdHeiX5V3w/giphy.gif"/> Before <img align="right" width="5%" alt="PNG" src="https://media.giphy.com/media/QAPQujznKdHeiX5V3w/giphy.gif"/>
   If you are affraid to use it, or not shure if it does what you expect, you can save and restore your system's configuration easly with **Timeshift** :
-  > https://teejeetech.com/timeshift/ (with vidéo tuto)
+  > https://teejeetech.com/timeshift/ (with video tuto)
   > **or**
   > https://github.com/teejee2008/timeshift
 
@@ -57,6 +57,21 @@ rm -rf darnc/
 ```
 sudo su
 darnc
+```
+
+## You have some trouble ?
+
+### Before you can use it :
+  Let me know in the ***Issues*** section, maybe I can help you.
+
+### When you use it :
+  DARNC records all errors in a file to /var/log/darnc_err.log. Copy the content of the file in the ***Issues*** to try figure it out what it's wrong with it.
+```
+cd /var/log/darnc_err.log
+```
+  or To see the content of darnc_err.log
+```
+cat /var/log/darnc_err.log
 ```
 
 ## Et voilà !
