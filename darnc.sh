@@ -1,6 +1,6 @@
 #!/bin/bash
-#LOG_FILE=debotorepnclean_out.log
-ERR_FILE=debotorepnclean_err.log
+#LOG_FILE=/var/log/darnc_out.log
+ERR_FILE=/var/log/darnc_err.log
 #exec 1> $LOG_FILE
 exec 2> $ERR_FILE
 
