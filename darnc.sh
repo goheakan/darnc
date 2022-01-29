@@ -35,7 +35,7 @@ main(){
   rm -rf /root/.local/share/Trash/*/** &> /dev/null
   echo_bold
   echo "${bold}| Clean up the residues of uninstalled packages :${normal}"
-  [[ $(dpkg -l | grep ^rc) ]] && dpkg -P "$(dpkg -l | awk '/^rc/{print $2}')" || echo "Aucun résidu trouvé."
+  [[ $(dpkg -l | grep ^rc) ]] && dpkg -P "$(dpkg -l | awk '/^rc/{print $2}')" || echo "No residues found."
   echo_bold
   echo "${bold}| Clean up the old kernel unused :${normal}"
   apt autoremove --purge -y 2>/dev/null
