@@ -69,7 +69,8 @@ darnc
 ```
 cd /var/log/darnc_err.log
 ```
-  or To see the content of darnc_err.log
+####  or
+  To see the content of darnc_err.log
 ```
 cat /var/log/darnc_err.log
 ```
