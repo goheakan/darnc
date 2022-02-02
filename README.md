@@ -22,7 +22,7 @@
   > https://github.com/teejee2008/timeshift
 
 ## How to use it ?
-### ***Prerequired***
+### ***Requirements***
 - Git :
 ```
 sudo apt install git
