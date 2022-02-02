@@ -46,7 +46,7 @@ main(){
   echo "${bold}| Clean up the independencies :${normal}"
   apt purge "$(dpkg -l | awk '/^rc/{print $2}')" -y 2>/dev/null
   echo_bold
-  echo "${bold}| The DARNC's service is done !${normal}"
+  echo "${bold}| The 🅓🅐🅡🅝🅒's service is done !${normal}"
 }
 
 
