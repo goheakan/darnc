@@ -16,8 +16,8 @@ echo_bold(){
 
 main(){
   echo "${bold}*********************************************************************"
-  echo "${bold}**                 Welcome to the DARNC's service                  **"
-  echo "${bold}**                           by Goheakan                           **"
+  echo "${bold}**              Welcome to the 🅓🅐🅡🅝🅒's service                  **"
+  echo "${bold}**                      by ⒼⓄⒽⒺⒶⓀⒶⓃ                           **"
   echo "${bold}*********************************************************************"
   echo_bold
   echo "${bold}| Update, the package lists, fix missing and broken packages :${normal}"
