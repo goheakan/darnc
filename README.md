@@ -37,26 +37,18 @@ cd Documents/
 git clone https://github.com/goheakan/darnc.git
 cd darnc/
 chmod +x darnc.sh
-sudo su
-cd ~/Documents/darnc/
-./darnc.sh
+sudo ./darnc.sh
 ```
 #### B\ Method - Regular Basis (To use it everytime you want easly)
   - 1\ Open a terminal (ctrl+alt+t)
   - 2\ Copy and past this commands to make the Debian Automation Repair & Clean like a command and use it easly.
       - (You can change the name of the command, instead of 'darnc', with the 5th command)
 ```
-git clone https://github.com/goheakan/darnc.git
-cd darnc/
-chmod +x darnc.sh
-sudo mv darnc.sh /usr/bin/darnc
-cd ..
-rm -rf darnc/
+git clone https://github.com/goheakan/darnc.git && chmod +x darnc/darnc.sh && sudo mv darnc/darnc.sh /usr/bin/darnc && rm -rf darnc/
 ```
  - 3\ Don't forget to run this as root
 ```
-sudo su
-darnc
+sudo darnc
 ```
 
 ## You have some troubles ?
