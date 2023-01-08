@@ -61,10 +61,7 @@ sudo mv /usr/bin/darnc /usr/bin/[THE-NAME-YOU-WANT]
 
 ### When you use it :
   DARNC records all errors in a file to /var/log/darnc_err.log. Copy the content of the file in the ***Issues*** to try figure it out what it's wrong with it.
-```
-cd /var/log/darnc_err.log
-```
-####  or
+
   To see the content of darnc_err.log
 ```
 cat /var/log/darnc_err.log
