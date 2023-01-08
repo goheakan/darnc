@@ -49,7 +49,7 @@ git clone https://github.com/goheakan/darnc.git && chmod +x darnc/darnc.sh && su
 ```
 sudo darnc
 ```
-- (You can change the name of the command, instead of 'darnc', with this command)
+INFO : You can change the name of the command, instead of 'darnc', with this command
 ```
 sudo mv /usr/bin/darnc /usr/bin/[THE-NAME-YOU-WANT]
 ```
