@@ -16,7 +16,7 @@
 - Clean up the independencies (dependencies unused by any packages)
 
 ## <img align="left" width="5%" alt="PNG" src="https://media.giphy.com/media/QAPQujznKdHeiX5V3w/giphy.gif"/> Before <img align="right" width="5%" alt="PNG" src="https://media.giphy.com/media/QAPQujznKdHeiX5V3w/giphy.gif"/>
-  If you are affraid to use it, or not shure if it does what you expect, you can save and restore your system's configuration easly with **Timeshift** :
+  If you are affraid to use it, or not sure if it does what you expect, you can save and restore your system's configuration easly with **Timeshift** :
   > https://teejeetech.com/timeshift/ (with video tuto)
   > **or**
   > https://github.com/teejee2008/timeshift
