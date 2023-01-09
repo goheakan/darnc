@@ -1,7 +1,11 @@
 #!/bin/bash
 #LOG_FILE=/var/log/darnc_out.log
 ERR_FILE=/var/log/darnc_err.log
+darnc_version="v1.0"
+darnc_year="2023"
+github_darnc_version=$(w3m https://github.com/goheakan/darnc/blob/master/README.md | awk '/Debian Automation Repair & Clean : DARNC/ {print $8}' | head -1)
 
+#Variables Colors
 #GREEN="\e[1;32m"
 BLUE="\e[1;34m"
 YELLOW="\e[1;33m"
@@ -10,14 +14,16 @@ RED="\e[0;31m"
 BKGBLUE="\e[1;44m"
 ENDCOLOR="\e[0m"
 
-echo_bold(){
-  i=3
-  while (( i > 0 )); do
-    echo "|"
-    (( i=i-1 ))
-  done
+#The tricks to work the notification in root
+Notify_User(){
+    sudo -u "${SUDO_USER}" DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$(id -u "${SUDO_USER}")/bus notify-send "$1" "$2"
 }
 
+echo_bold(){
+  echo -e "|\n|\n|"
+}
+
+#The display in terminal mode
 chapter(){
   stars_number=35
   stars=""
@@ -36,10 +42,43 @@ chapter(){
   echo -e "|${BLUE}${stars}${ENDCOLOR}${BKGBLUE}${chapter_name}${ENDCOLOR}${BLUE}${stars}${ENDCOLOR}"
 }
 
+#Function to check and do the update
+Darnc_Update(){
+    if [[ ${github_darnc_version} > ${darnc_version} ]]; then
+        #ask to the user if he wants to update
+        if zenity --question --text "A new version of DARNC is available. Do you want to upgrade it now ?"; then
+            Notify_User "DARNC" "DARNC is going to update."
+            #create a file to do the update
+        #
+    #
+#
+cat > /tmp/darnc_update << EOF
+    #!/bin/bash
+    #mise à jour de darnc
+    exec 2> $/var/log/darnc_update_err.log
+
+    git clone https://github.com/goheakan/darnc.git /tmp  && chmod +x /tmp/darnc/darnc.sh && mv /tmp/darnc/darnc.sh /usr/bin/darnc && rm -rf /tmp/darnc/
+
+    sudo -u "${SUDO_USER}" DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$(id -u "${SUDO_USER}")/bus notify-send "DARNC" "DARNC is updated."
+
+    darnc
+    rm /tmp/darnc_update
+    exit 0
+EOF
+#
+    #
+        #
+            #
+            bash /tmp/darnc_update
+            exit 0
+        fi
+    fi
+}
+
 main(){
   chapter
-  echo -e "${BLUE}┌─>${ENDCOLOR} ${BKGBLUE}Welcome to DARNC (Debian Automation Repair & Clean)${ENDCOLOR}"
-  echo -e "${BLUE}└────────────────────────────────────────────────>${ENDCOLOR} ${BKGBLUE}by Goheakan${ENDCOLOR}"
+  echo -e "${BLUE}┌─>${ENDCOLOR} ${BKGBLUE}Welcome to DARNC ${darnc_version} [${darnc_year}]${ENDCOLOR}"
+  echo -e "${BLUE}└────────>${ENDCOLOR} ${BKGBLUE}(Debian Automation Repair & Clean) by Goheakan${ENDCOLOR}"
   chapter
   echo_bold
   chapter "Fix missing files, broken packages and dependencies"
@@ -75,12 +114,14 @@ main(){
 
 
 if [ "$USER" != root ]; then
-  echo -e "${RED}[Auto-Install] : Need to run as root ! Use sudo please."
-  echo -e "${YELLOW}[Auto-Install] : Exiting...${ENDCOLOR}"
+  echo -e "${RED}[DARNC] : Need to run as root ! Use sudo please."
+  echo -e "${YELLOW}[DARNC] : Exiting...${ENDCOLOR}"
   echo -e
   exit 0
 else
   #exec 1> $LOG_FILE
   exec 2> $ERR_FILE
+  Darnc_Update
   main
+  exit 0
 fi
