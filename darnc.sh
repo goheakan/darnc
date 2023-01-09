@@ -57,7 +57,7 @@ cat > /tmp/darnc_update << EOF
     #mise à jour de darnc
     exec 2> $/var/log/darnc_update_err.log
 
-    git clone https://github.com/goheakan/darnc.git /tmp  && chmod +x /tmp/darnc/darnc.sh && mv /tmp/darnc/darnc.sh /usr/bin/darnc && rm -rf /tmp/darnc/
+    git clone https://github.com/goheakan/darnc.git /tmp/  && chmod +x /tmp/darnc/darnc.sh && mv /tmp/darnc/darnc.sh /usr/bin/darnc && rm -rf /tmp/darnc/
 
     sudo -u "${SUDO_USER}" DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$(id -u "${SUDO_USER}")/bus notify-send "DARNC" "DARNC is updated."
 
